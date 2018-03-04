@@ -1,0 +1,17 @@
+<h1>Editing Component</h1>
+
+<%= render 'form', user_component: @user %>
+
+<div class="field">
+  <%= text_field :authentication_token,:authentication_token, value: @user.authentication_token, placeholder: 'authentication token', readonly: true, id: 'authentication_token'%>
+</div>
+<div>
+  <%= link_to "update Token", user_authentication_token_path(@user.id), method: :put, remote: true, id: 'generate_authentication_token'%>
+  <%= link_to "delete Token", user_authentication_token_path(@user.id), method: :delete, remote: true, id: 'delete_authentication_token'%>
+</div>
+
+<p>
+  <%= link_to 'Show', @user %> |
+  <%= link_to 'Back', users_path %>
+</p>
+
