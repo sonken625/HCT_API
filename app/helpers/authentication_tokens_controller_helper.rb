@@ -1,0 +1,2 @@
+module AuthenticationTokensControllerHelper
+end
