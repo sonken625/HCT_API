@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="hct_server_development@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.7">
+    <root id="1"/>
+    <database id="2" parent="1" name="hct_server_development">
+      <ObjectId>73782</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="3" parent="1" name="postgres">
+      <ObjectId>12379</ObjectId>
+    </database>
+    <database id="4" parent="1" name="otomo_travel_development">
+      <ObjectId>25197</ObjectId>
+    </database>
+    <database id="5" parent="1" name="otomo_travel_test">
+      <ObjectId>25198</ObjectId>
+    </database>
+    <database id="6" parent="1" name="hcs_server_development">
+      <ObjectId>32769</ObjectId>
+    </database>
+    <database id="7" parent="1" name="hcs_server_test">
+      <ObjectId>41763</ObjectId>
+    </database>
+    <database id="8" parent="1" name="hct_server_test">
+      <ObjectId>73783</ObjectId>
+    </database>
+    <role id="9" parent="1" name="hcs_server">
+      <ObjectId>32768</ObjectId>
+      <Inherit>1</Inherit>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="10" parent="1" name="hct_server">
+      <ObjectId>73781</ObjectId>
+      <Inherit>1</Inherit>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="11" parent="1" name="postgres">
+      <ObjectId>10</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <Replication>1</Replication>
+      <ConnectionLimit>-1</ConnectionLimit>
+      <BypassRls>1</BypassRls>
+    </role>
+    <role id="12" parent="1" name="sonken625">
+      <ObjectId>16384</ObjectId>
+      <Inherit>1</Inherit>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <schema id="13" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2018-03-03.11:24:45.034</IntrospectionTimestamp>
+      <IntrospectionStateNumber>24105</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="14" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="15" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="16" parent="2" name="pg_temp_1">
+      <ObjectId>11816</ObjectId>
+    </schema>
+    <schema id="17" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11817</ObjectId>
+    </schema>
+    <schema id="18" parent="2" name="information_schema">
+      <ObjectId>12087</ObjectId>
+    </schema>
+    <sequence id="19" parent="13" name="users_id_seq">
+      <ObjectId>73928</ObjectId>
+      <StateNumber>24103</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="20" parent="13" name="admins_id_seq">
+      <ObjectId>73816</ObjectId>
+      <StateNumber>24074</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <table id="21" parent="13" name="admins">
+      <ObjectId>73818</ObjectId>
+      <StateNumber>24074</StateNumber>
+    </table>
+    <table id="22" parent="13" name="ar_internal_metadata">
+      <ObjectId>73792</ObjectId>
+      <StateNumber>24075</StateNumber>
+    </table>
+    <table id="23" parent="13" name="schema_migrations">
+      <ObjectId>73784</ObjectId>
+      <StateNumber>24077</StateNumber>
+    </table>
+    <table id="24" parent="13" name="users">
+      <ObjectId>73930</ObjectId>
+      <StateNumber>24103</StateNumber>
+    </table>
+    <column id="25" parent="21" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>24045</StateNumber>
+      <DefaultExpression>nextval(&apos;admins_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>20</TypeId>
+      <SequenceName>admins_id_seq</SequenceName>
+    </column>
+    <column id="26" parent="21" name="username">
+      <Position>2</Position>
+      <DataType>varchar|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>24045</StateNumber>
+      <DefaultExpression>&apos;&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="27" parent="21" name="encrypted_password">
+      <Position>3</Position>
+      <DataType>varchar|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>24045</StateNumber>
+      <DefaultExpression>&apos;&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="28" parent="21" name="reset_password_token">
+      <Position>4</Position>
+      <DataType>varchar|0</DataType>
+      <StateNumber>24045</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="29" parent="21" name="reset_password_sent_at">
+      <Position>5</Position>
+      <DataType>timestamp|0</DataType>
+      <StateNumber>24045</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="30" parent="21" name="remember_created_at">
+      <Position>6</Position>
+      <DataType>timestamp|0</DataType>
+      <StateNumber>24045</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="31" parent="21" name="sign_in_count">
+      <Position>7</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>24045</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="32" parent="21" name="current_sign_in_at">
+      <Position>8</Position>
+      <DataType>timestamp|0</DataType>
+      <StateNumber>24045</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="33" parent="21" name="last_sign_in_at">
+      <Position>9</Position>
+      <DataType>timestamp|0</DataType>
+      <StateNumber>24045</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="34" parent="21" name="current_sign_in_ip">
+      <Position>10</Position>
+      <DataType>inet|0</DataType>
+      <StateNumber>24045</StateNumber>
+      <TypeId>869</TypeId>
+    </column>
+    <column id="35" parent="21" name="last_sign_in_ip">
+      <Position>11</Position>
+      <DataType>inet|0</DataType>
+      <StateNumber>24045</StateNumber>
+      <TypeId>869</TypeId>
+    </column>
+    <column id="36" parent="21" name="created_at">
+      <Position>12</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>24045</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="37" parent="21" name="updated_at">
+      <Position>13</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>24045</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="38" parent="21" name="admins_pkey">
+      <ObjectId>73828</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="39" parent="21" name="index_admins_on_username">
+      <ObjectId>73830</ObjectId>
+      <ColNames>username</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="40" parent="21" name="index_admins_on_reset_password_token">
+      <ObjectId>73831</ObjectId>
+      <ColNames>reset_password_token</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="41" parent="21" name="admins_pkey">
+      <ObjectId>73829</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>admins_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="42" parent="22" name="key">
+      <Position>1</Position>
+      <DataType>varchar|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>24035</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="43" parent="22" name="value">
+      <Position>2</Position>
+      <DataType>varchar|0</DataType>
+      <StateNumber>24035</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="44" parent="22" name="created_at">
+      <Position>3</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>24035</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="45" parent="22" name="updated_at">
+      <Position>4</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>24035</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="46" parent="22" name="ar_internal_metadata_pkey">
+      <ObjectId>73798</ObjectId>
+      <ColNames>key</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="47" parent="22" name="ar_internal_metadata_pkey">
+      <ObjectId>73799</ObjectId>
+      <ColNames>key</ColNames>
+      <UnderlyingIndexName>ar_internal_metadata_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="48" parent="23" name="version">
+      <Position>1</Position>
+      <DataType>varchar|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>24034</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="49" parent="23" name="schema_migrations_pkey">
+      <ObjectId>73790</ObjectId>
+      <ColNames>version</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="50" parent="23" name="schema_migrations_pkey">
+      <ObjectId>73791</ObjectId>
+      <ColNames>version</ColNames>
+      <UnderlyingIndexName>schema_migrations_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="51" parent="24" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>24103</StateNumber>
+      <DefaultExpression>nextval(&apos;users_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>20</TypeId>
+      <SequenceName>users_id_seq</SequenceName>
+    </column>
+    <column id="52" parent="24" name="authentication_token">
+      <Position>2</Position>
+      <DataType>varchar|0</DataType>
+      <StateNumber>24103</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="53" parent="24" name="name">
+      <Position>3</Position>
+      <DataType>varchar|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>24103</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="54" parent="24" name="created_at">
+      <Position>4</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>24103</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="55" parent="24" name="updated_at">
+      <Position>5</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>24103</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="56" parent="24" name="users_pkey">
+      <ObjectId>73937</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="57" parent="24" name="index_users_on_authentication_token">
+      <ObjectId>73939</ObjectId>
+      <ColNames>authentication_token</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="58" parent="24" name="index_users_on_name">
+      <ObjectId>73940</ObjectId>
+      <ColNames>name</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="59" parent="24" name="users_pkey">
+      <ObjectId>73938</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>users_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
