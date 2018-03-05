@@ -1,15 +1,13 @@
 class ApplicationController < ActionController::Base
-
+  before_action :configure_permitted_parameters, if: :devise_controller?
   protect_from_forgery with: :exception
+
   # json でのリクエストの場合CSRFトークンの検証をスキップ
   skip_before_action :verify_authenticity_token, if: -> {request.format.json?}
   # jsonの場合トークンによる認証
   prepend_before_action :authenticate_user_from_token!, if: -> {request.format.json?}
 
-
-  before_action :configure_permitted_parameters, if: :devise_controller?
   prepend_before_action :authenticate_admin! ,if: -> {request.format.html?}
-
 
   # 権限無しのリソースにアクセスしようとした場合
   rescue_from CanCan::AccessDenied do |exception|
@@ -45,6 +43,9 @@ class ApplicationController < ActionController::Base
     end
 
   end
+
+
+
 
   protected
 

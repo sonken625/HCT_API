@@ -8,6 +8,7 @@ class Ability
       can :manage,:all
     else
       can :read , User,id: user.id
+      can %i[read update destroy], QueryDefinition
     end
     # Define abilities for the passed in user here. For example:
     #
