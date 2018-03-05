@@ -1,0 +1,6 @@
+<div class="field">
+  <%= text_field :search_key, :search_key, value: query_definition.search_key, placeholder: 'search_key', readonly: true, id: 'search_key'%>
+</div>
+<div>
+  <%= link_to "update search_key", query_definition_search_keys_path(query_definition),class:"ui button", method: :put, remote: true, id: 'update_search_key'%>
+</div>
