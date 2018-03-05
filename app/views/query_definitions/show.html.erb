@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Param String:</strong>
+  <%= @query_definition.params_string %>
+</p>
+<p>
+  <strong>Search key:</strong>
+  <%= @query_definition.search_key %>
+</p>
+
+<%= link_to 'Edit', edit_query_definition_path(@query_definition) %> |
+<%= link_to 'Back', query_definitions_path %>

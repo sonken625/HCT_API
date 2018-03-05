@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Query Definitions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>param文字列</th>
+      <th>Search key</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @query_definitions.each do |query_definition| %>
+      <tr>
+        <td><%= query_definition.params_string %></td>
+        <td><%= query_definition.search_key %></td>
+        <td><%= link_to 'Show', query_definition %></td>
+        <td><%= link_to 'Edit', edit_query_definition_path(query_definition) %></td>
+        <td><%= link_to 'Destroy', query_definition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Query Definition', new_query_definition_path %>

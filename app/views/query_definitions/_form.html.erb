@@ -1,0 +1,22 @@
+<%= form_with(model: query_definition, local: true,class: "ui form") do |form| %>
+  <% if query_definition.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(query_definition.errors.count, "error") %> prohibited this query_definition from being saved:</h2>
+
+      <ul>
+      <% query_definition.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :params_string %>
+    <%= form.text_field :params_string, :placeholder => "params文字列",:required => true%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "ui button" %>
+  </div>
+<% end %>

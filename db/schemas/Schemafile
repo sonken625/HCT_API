@@ -2,3 +2,4 @@
 # vi: set ft=ruby :
 require 'admins.schema'
 require 'users.schema'
+require 'query_definitions.schema'
