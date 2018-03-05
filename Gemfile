@@ -13,6 +13,11 @@ gem 'devise'
 
 gem 'cancancan', '2.1.0'
 
+gem 'faraday'
+gem  'faraday_middleware'
+gem 'dotenv-rails', require: 'dotenv/rails-now'
+gem 'semantic-ui-sass'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
