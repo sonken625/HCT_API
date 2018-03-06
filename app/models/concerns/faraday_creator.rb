@@ -8,7 +8,8 @@ module FaradayCreator
 
   def create_faraday
     token= Rails.env ==  'development' ? ENV['HCS_AUTHENTICATION_TOKEN'] : ENV['HCS_AUTHENTICATION_TOKEN_PRO']
-    Faraday.new(url: Rails.env==  'development' ? 'http://localhost:3001': 'http://localhost:3201',
+    url =  Rails.env==  'development' ?  ENV['HCS_SERVER_IP'] : 'http://localhost:3201'
+    Faraday.new(url:url,
                 headers: { Authorization: 'Token ' + token, Accept: 'application/json' },
                 request: {
                   open_timeout: 5, # opening a connection
