@@ -1,0 +1,1 @@
+json.partial! "received_request_messages/received_request_message", received_request_message: @received_request_message

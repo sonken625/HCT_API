@@ -1,0 +1,18 @@
+create_table :request_messages do |t|
+  t.string :message_unique_id
+
+  #STIを利用しているため、typeがSentRequestMessageの時
+  # query_definition_idはnullなのでsearch_keyで検索できるようにするために独自でカラムを持つ
+  #
+  t.references :query_definition,null:true
+  t.string :search_key,null:false
+  t.string :type, null:false
+
+
+
+  t.datetime "created_at", null: false
+  t.datetime "updated_at", null: false
+
+  t.index ["message_unique_id","type"], name: "index_request_messages_on_message_unique_id", unique: true
+end
+

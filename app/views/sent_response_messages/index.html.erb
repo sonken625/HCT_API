@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sent Response Messages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sent_response_messages.each do |sent_response_message| %>
+      <tr>
+        <td><%= link_to 'Show', sent_response_message %></td>
+        <td><%= link_to 'Edit', edit_sent_response_message_path(sent_response_message) %></td>
+        <td><%= link_to 'Destroy', sent_response_message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sent Response Message', new_sent_response_message_path %>

@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Received Request Messages</h1>
+
+<table >
+  <thead>
+    <tr>
+      <th>Message id</th>
+      <th>Received at</th>
+      <th>Response count</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @received_request_messages.each do |received_request_message| %>
+      <tr>
+        <td><%=received_request_message.message_unique_id%></td>
+        <td><%=received_request_message.created_at%></td>
+        <td><%=received_request_message.response_messages.count%></td>
+        <td><%= link_to 'Show', received_request_message %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

@@ -1,0 +1,42 @@
+<table  class="ui celled table">
+  <thead>
+  <tr>
+    <th>Message id</th>
+    <th>sent at</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr>
+    <td>  <%=  @received_request_message.message_unique_id %></td>
+    <td><%=  @received_request_message.created_at %></td>
+  </tr>
+
+  </tbody>
+</table>
+
+<%= link_to "responseを作成"  ,  new_response_message_path(@received_request_message)%>
+
+
+
+<h1>Responses</h1>
+<table  class="ui celled table">
+  <thead>
+  <tr>
+    <th>Params文字列</th>
+    <th>Sent at</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @received_request_message.response_messages.each do |response_message| %>
+    <tr>
+      <td><%=response_message.params_string %></td>
+      <td><%= response_message.created_at%></td>
+    </tr>
+  <%end%>
+  </tbody>
+</table>
+
+
+<%= link_to 'Back', received_request_messages_path %>

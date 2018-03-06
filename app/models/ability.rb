@@ -1,14 +1,16 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(user,admin)
+  def initialize(user, admin)
 
     if admin
-
       can :manage,:all
     else
       can :read , User,id: user.id
       can %i[read update destroy], QueryDefinition
+      can :read, ReceivedRequestMessage
+      can %i[read create],ResponseMessage
+      can %i[read create], SentRequestMessage
     end
     # Define abilities for the passed in user here. For example:
     #

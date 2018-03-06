@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<table  class="ui celled table">
+  <thead>
+  <tr>
+    <th>Message id</th>
+    <th>Search key</th>
+    <th>sent at</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr>
+    <td><%=@sent_request_message.message_unique_id %></td>
+    <td><%= @sent_request_message.search_key %></td>
+    <td><%= @sent_request_message.created_at %></td>
+  </tr>
+
+  </tbody>
+</table>
+
+<h1>Responses</h1>
+<table  class="ui celled table">
+  <thead>
+  <tr>
+    <th>Params文字列</th>
+    <th>Received at</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @sent_request_message.response_messages.each do |response_message| %>
+  <tr>
+    <td><%=response_message.params_string %></td>
+    <td><%= response_message.created_at%></td>
+  </tr>
+  <%end%>
+  </tbody>
+
+
+
+</table>
+
+<%= link_to 'Back',  sent_request_messages_path %>

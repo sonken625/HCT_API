@@ -84,6 +84,6 @@ test:
 #
 production:
   <<: *default
-  database: hct-server_production
-  username: hct-server
-  password: <%= ENV['HCT-SERVER_DATABASE_PASSWORD'] %>
+  database: hct_server_production
+  username: hct_server
+  password: password

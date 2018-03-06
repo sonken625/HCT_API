@@ -10,5 +10,14 @@
       <user-name>hct_server</user-name>
       <introspection-schemas>hct_server_development:public</introspection-schemas>
     </data-source>
+    <data-source name="hct_server_production@localhost" uuid="cc147c6f-7a67-47cd-9f1a-7547e2d32e3c">
+      <database-info product="PostgreSQL" version="9.5.11" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.1">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>hct_server</user-name>
+      <introspection-schemas>hct_server_production:public</introspection-schemas>
+    </data-source>
   </component>
 </project>

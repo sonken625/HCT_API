@@ -36,14 +36,18 @@ class ApplicationController < ActionController::Base
 
   def current_ability
     if current_admin
-      @current_ability ||= Ability.new(current_admin,true)
+      @current_ability ||= Ability.new(current_admin, true)
     else
       logger.debug(request.format.json?)
-      @current_ability ||= Ability.new(current_user,false)
+      @current_ability ||= Ability.new(current_user, false)
     end
 
   end
 
+
+  def not_found
+    raise ActionController::RoutingError.new('Not Found')
+  end
 
 
 

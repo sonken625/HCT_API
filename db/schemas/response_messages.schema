@@ -1,0 +1,8 @@
+create_table :response_messages do |t|
+  t.references :request_message,null:true
+  t.string :params_string, null:false
+  t.integer :on_hcs_id,null:true
+
+  t.datetime "created_at", null: false
+  t.datetime "updated_at", null: false
+end

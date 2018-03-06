@@ -1,5 +1,5 @@
 create_table :query_definitions do |t|
-  t.string :search_keys, null:false
+  t.string :search_key, null:false
   t.string :params_string,null:false
 
   t.index ["search_key"], name: "index_query_definitions_on_search_key", unique: true

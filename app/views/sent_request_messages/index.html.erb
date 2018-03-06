@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Request Messages</h1>
+
+<table class="ui celled table">
+  <thead>
+    <tr>
+      <th>Message unique id</th>
+      <th>search_key</th>
+      <th>sent at</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sent_request_messages.each do |request_message| %>
+      <tr>
+        <td><%= request_message.message_unique_id %></td>
+        <td><%= request_message.search_key %></td>
+        <td><%= request_message.created_at %></td>
+        <td><%= link_to 'Show', request_message %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Request Message',new_sent_request_message_path %>

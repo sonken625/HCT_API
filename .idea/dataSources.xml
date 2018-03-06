@@ -7,5 +7,11 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/hct_server_development</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="hct_server_production@localhost" uuid="cc147c6f-7a67-47cd-9f1a-7547e2d32e3c">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/hct_server_production</jdbc-url>
+    </data-source>
   </component>
 </project>

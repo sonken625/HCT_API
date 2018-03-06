@@ -3,3 +3,5 @@
 require 'admins.schema'
 require 'users.schema'
 require 'query_definitions.schema'
+require 'request_messages.schema'
+require 'response_messages.schema'

@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  resources :received_request_messages,only:[:show, :index] ,param: :request_message_id do
+    member do
+      resources :response_messages,only: [:show,:index, :new,:create]
+    end
+  end
+
+  resources :sent_request_messages, only:[:new, :create, :show, :index] ,param: :request_message_id  do
+    member do
+      resources :response_messages,only: [:index,:show]
+    end
+  end
+
+
+
 
   root to: 'query_definitions#index'
 
